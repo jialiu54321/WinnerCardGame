@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Winner_Card_Game_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-7S-ih1">
+                                <rect key="frame" x="285" y="535" width="30" height="30"/>
+                                <connections>
+                                    <segue destination="hDm-eZ-a5j" kind="modal" identifier="stratGame" modalTransitionStyle="crossDissolve" id="PgD-96-h3I"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo1" translatesAutoresizingMaskIntoConstraints="NO" id="F1U-Jf-V6R">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="TkO-fW-cJ7"/>
+                                    <constraint firstAttribute="width" constant="200" id="uik-eX-FGh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IA1-7S-ih1" secondAttribute="bottom" constant="35" id="6Hl-ag-XZs"/>
+                            <constraint firstItem="F1U-Jf-V6R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KIa-L8-XsN"/>
+                            <constraint firstItem="IA1-7S-ih1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LWs-Y0-Afv"/>
+                            <constraint firstItem="F1U-Jf-V6R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u0S-QP-PFB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="StartButton" destination="IA1-7S-ih1" id="qlx-Mv-wBf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237" y="216"/>
+        </scene>
+        <!--Game Table View Controller-->
+        <scene sceneID="oys-2s-ZbO">
+            <objects>
+                <viewController id="hDm-eZ-a5j" userLabel="Game Table View Controller" customClass="GameTableViewController" customModule="Winner_Card_Game_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="agk-jk-wbE"/>
+                        <viewControllerLayoutGuide type="bottom" id="HBn-is-RDA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8BH-AH-jJU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75v-mr-GXQ">
+                                <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="CXO-82-vkQ"/>
+                                    <constraint firstAttribute="height" constant="65" id="aYL-bW-z2K"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="backToHome" id="zpI-Ys-5DS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSc-w6-PQk">
+                                <rect key="frame" x="270" y="40" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AXH-F1-2Y6"/>
+                                    <constraint firstAttribute="width" constant="60" id="hoX-Rw-UzP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="75v-mr-GXQ" firstAttribute="top" secondItem="agk-jk-wbE" secondAttribute="bottom" constant="10" id="OQo-FZ-P14"/>
+                            <constraint firstItem="DSc-w6-PQk" firstAttribute="top" secondItem="agk-jk-wbE" secondAttribute="bottom" constant="20" id="c3F-EJ-D4g"/>
+                            <constraint firstItem="DSc-w6-PQk" firstAttribute="centerX" secondItem="8BH-AH-jJU" secondAttribute="centerX" id="hTH-Le-ABS"/>
+                            <constraint firstItem="75v-mr-GXQ" firstAttribute="leading" secondItem="8BH-AH-jJU" secondAttribute="leadingMargin" id="xJF-LB-IAn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eSw-80-Rs7"/>
+                    <connections>
+                        <outlet property="backButtom" destination="75v-mr-GXQ" id="tMg-4W-uFh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Na0-eL-BsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="337"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo1" width="111" height="111"/>
+    </resources>
+</document>
