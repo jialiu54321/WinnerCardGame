@@ -137,11 +137,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Winner(Card Game)/GameTableViewController.swift"
-            timestampString = "481343625.562587"
+            timestampString = "481394827.338555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "357"
-            endingLineNumber = "357"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
             landmarkName = "GameTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -153,11 +153,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Winner(Card Game)/GameTableViewController.swift"
-            timestampString = "481343625.562587"
+            timestampString = "481394827.338555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "5">
          </BreakpointContent>

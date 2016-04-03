@@ -39,6 +39,8 @@ let submitButton = UIButton(type: UIButtonType.System)
 let passButton = UIButton(type: UIButtonType.System)
 let startButton = UIButton(type: UIButtonType.System)
 
+var alertController = UIAlertController(title: "Game Over", message: "", preferredStyle: .Alert)
+
 let screenSize: CGRect = UIScreen.mainScreen().bounds
 let screenWidth = screenSize.width
 let screenHeight = screenSize.height
@@ -110,12 +112,18 @@ class GameTableViewController: UIViewController {
             var opponent1 = UIImageView(frame: CGRectMake(screenWidth/2 - 25, 20, 50, 50))
             opponent1.image = UIImage(named: "Opponent")
             self.view.addSubview(opponent1)
-            
         }
         
-        
-        
+
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        let action = UIAlertAction(title: "Confirm", style: .Default, handler: nil)
+        alertController.addAction(action)
+
+    }
+    
     
     func newGameStart(){
         
@@ -264,6 +272,7 @@ class GameTableViewController: UIViewController {
         updatetableCardSetViews(currentTableCardSet)
         submitButton.enabled = false;
         rightToLead = 0
+        detectWinner(players[0])
         roundStart(1)
         print(players[0].numberOfCards)
     }
@@ -300,12 +309,6 @@ class GameTableViewController: UIViewController {
 
     }
     
-    func humanDealed(rightToLead1: Int){
-        for var a = 1; a < numberOfPlayer && passCount < numberOfPlayer - 1; ++a{
-            
-        }
-    }
-    
     func roundStart(lead: Int){
         
         if passCount >= numberOfPlayer - 1 {
@@ -334,12 +337,28 @@ class GameTableViewController: UIViewController {
                     
                 } else {
                     print("AI dealed")
+                    detectWinner(players[a])
                     currentTableCardSet = CardSet(cardSet: newCardSet)
                     rightToLead = a
                     updatetableCardSetViews(currentTableCardSet)
                 }
         }
         roundStart(0)
+    }
+    
+    func detectWinner(player: People){
+        if player.playerType == peopleType.human && player.numberOfCards <= 0 {
+            print("Your Win")
+            alertController.message = "You Win!"
+            self.presentViewController(alertController, animated: true, completion: nil)
+            newGameStart()
+        }
+        if player.playerType == peopleType.AI && player.cards.count <= 0 {
+            print("Your Lose")
+            alertController.message = "You Lose....."
+            self.presentViewController(alertController, animated: true, completion: nil)
+            newGameStart()
+        }
     }
     
     func backToHomeView(sender: UIButton){
